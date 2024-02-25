@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        body{
+            width: -webkit-fill-available;
+            height: 92dvh;
+            background-image: url(../static/images/home_slider.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        #parent{
+            height: 600px;
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 40px;
+            border: none;
+            box-shadow: 0px 0px 10px gray;
+            background-image: url(../static/images/White\ feathers\ Cool\ Simple\ Backgrounds\ abstract\ QHD\ Free\ Download.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #child2{
+            width: 350px;
+            height: 70px;
+            border: 1px solid transparent ;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: 0px 0px 10px grey;
+        }
+        #child3{
+            width: 350px;
+            height: 70px;
+            border: 1px solid transparent;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: 0px 0px 10px grey;
+        }
+        #child4{
+            width: 100px;
+            height: 50px;
+            border: 1px solid ;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: green;
+            opacity: 65%;
+            box-shadow: 0px 0px 10px grey;
+        }
+        #child1{
+            width: 110px;
+            height: 110px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+        #user1{
+            color: black;
+            font-size: 100px;
+        }
+        input[type=text]{
+            height: 50px;
+            width: 270px;
+            border: transparent;
+            outline: transparent;
+            font-size: 25px;
+            background: transparent;
+        }
+        input[type=password]{
+            height: 50px;
+            width: 270px;
+            border: none;
+            outline: none;
+            font-size: 25px;
+            background: transparent;
+        }
+        input[type=submit]{
+            height: 50px;
+            width: 270px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            background: transparent;
+            color: white;
+        }
+        #text1{
+            font-size: 30px;
+        }
+        #email1{
+            font-size: 30px;
+        }
+        #arrow{
+            font-size: 20px;
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form action="login" method="post">
+        {% csrf_token %}
+    <div id="parent">
+        <div id="child1"><i class="fa fa-user-circle" aria-hidden="true" id="user1"></i></div>
+
+        <div id="child2">
+            <i class="fa fa-user" aria-hidden="true" id="text1"></i>
+            <input type="text" name="username" id="" placeholder="Username"> 
+        </div>
+
+        <div id="child3">
+            <i class="fa fa-envelope-o" aria-hidden="true" id="email1"></i>
+            <input type="password" name="password" id="" placeholder="Password">
+        </div>
+
+        <div id="child4">
+           <input type="submit" value="Login"> 
+        </i></div>
+    </div>
+</form>
+
+<div>
+    {% for message in messages %}
+    <h3> {{message}}</h3>
+    {% endfor%}
+</div>
+</body>
+</html>
